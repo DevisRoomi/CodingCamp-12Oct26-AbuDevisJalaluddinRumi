@@ -1,0 +1,285 @@
+:root {
+    --bg-color: #fafafa;
+    --card-bg: #ffffff;
+    --text-primary: #111111;
+    --text-secondary: #666666;
+    --accent-color: #000000;
+    --accent-hover: #333333;
+    --border-color: #e0e0e0;
+    --font-ui: 'Inter', sans-serif;
+    --font-display: 'Playfair Display', serif;
+}
+
+[data-theme="dark"] {
+    --bg-color: #121212;
+    --card-bg: #1a1a1a;
+    --text-primary: #f0f0f0;
+    --text-secondary: #a0a0a0;
+    --accent-color: #ffffff;
+    --accent-hover: #cccccc;
+    --border-color: #333333;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    font-family: var(--font-ui);
+    transition: background-color 0.4s ease, color 0.4s ease;
+    min-height: 100vh;
+    padding: 2rem;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Background Typography Watermark */
+.bg-typography {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 28vw;
+    font-family: var(--font-display);
+    font-weight: 700;
+    color: rgba(0, 0, 0, 0.03);
+    z-index: -1;
+    pointer-events: none;
+    letter-spacing: -0.05em;
+    white-space: nowrap;
+    user-select: none;
+}
+
+[data-theme="dark"] .bg-typography {
+    color: rgba(255, 255, 255, 0.02);
+}
+
+.theme-switch-wrapper {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 2rem;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.card {
+    background: transparent;
+    border: 1px solid var(--border-color);
+    padding: 2rem;
+    margin-bottom: 2rem;
+    position: relative;
+    backdrop-filter: blur(10px);
+}
+
+.greeting-card {
+    text-align: center;
+    border-top: 4px solid var(--accent-color);
+    border-bottom: 1px solid var(--border-color);
+    border-left: none;
+    border-right: none;
+    padding: 3rem 1rem;
+}
+
+#time-display {
+    font-family: var(--font-display);
+    font-size: 4.5rem;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+}
+
+#date-display {
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+}
+
+#greeting-text {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-style: italic;
+    font-size: 2rem;
+}
+
+#user-name {
+    border-bottom: 1px solid var(--border-color);
+    outline: none;
+    cursor: text;
+    padding-bottom: 2px;
+}
+
+.hint {
+    display: block;
+    margin-top: 1rem;
+    color: var(--text-secondary);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.section-title {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.5rem;
+}
+
+.input-group {
+    display: flex;
+    gap: 0;
+    margin-bottom: 1.5rem;
+}
+
+input {
+    flex: 1;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--border-color);
+    background: transparent;
+    color: var(--text-primary);
+    font-family: var(--font-ui);
+    font-size: 0.9rem;
+}
+
+input:focus {
+    outline: none;
+    border-color: var(--accent-color);
+}
+
+.btn {
+    padding: 0.75rem 1.5rem;
+    border: 1px solid var(--accent-color);
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: all 0.2s ease;
+}
+
+.primary {
+    background: var(--accent-color);
+    color: var(--bg-color);
+}
+
+.primary:hover {
+    background: transparent;
+    color: var(--accent-color);
+}
+
+.secondary {
+    background: transparent;
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+}
+
+.secondary:hover {
+    border-color: var(--accent-color);
+}
+
+.btn-minimal {
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.75rem;
+    transition: color 0.2s;
+}
+
+.btn-minimal:hover {
+    color: var(--accent-color);
+}
+
+/* Timer */
+.timer-card { text-align: center; }
+#timer-display {
+    font-family: var(--font-display);
+    font-size: 5rem;
+    color: var(--text-primary);
+    margin: 2rem 0;
+    font-weight: 400;
+}
+.controls { display: flex; justify-content: center; gap: 1rem; }
+
+/* To-Do List */
+ul { list-style: none; }
+li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--border-color);
+    font-size: 0.95rem;
+}
+li.done span {
+    text-decoration: line-through;
+    color: var(--text-secondary);
+    font-style: italic;
+}
+.task-content { display: flex; align-items: center; gap: 1rem; }
+.delete-btn { 
+    background: transparent; 
+    color: var(--text-secondary); 
+    border: none; 
+    cursor: pointer;
+    text-transform: uppercase;
+    font-size: 0.7rem;
+    letter-spacing: 0.05em;
+}
+.delete-btn:hover { color: var(--danger-color); }
+
+/* Links */
+#links-container { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+.link-badge {
+    background: transparent;
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.85rem;
+    transition: border-color 0.2s;
+}
+.link-badge:hover {
+    border-color: var(--accent-color);
+}
+.remove-link {
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    cursor: pointer;
+    font-size: 1.2rem;
+    line-height: 1;
+}
+.remove-link:hover {
+    color: var(--danger-color);
+}
+
+@media (max-width: 768px) {
+    .grid { grid-template-columns: 1fr; }
+    .bg-typography { font-size: 40vw; }
+}

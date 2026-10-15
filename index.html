@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Life Dashboard | Editorial</title>
+    <!-- Font elegan untuk gaya editorial -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Latar Belakang Tipografi Raksasa -->
+    <div class="bg-typography">DEVIS</div>
+
+    <div class="theme-switch-wrapper">
+        <button id="theme-toggle" class="btn-minimal">Dark Mode</button>
+    </div>
+
+    <div class="container">
+        <!-- Greeting Section -->
+        <section class="card greeting-card">
+            <h1 id="time-display">00:00:00</h1>
+            <p id="date-display">Date</p>
+            <h2 id="greeting-text">Good <span id="greeting-time">Morning</span>, <span id="user-name" contenteditable="true" spellcheck="false">Devis</span>.</h2>
+            <small class="hint">Click your name to edit</small>
+        </section>
+
+        <div class="grid">
+            <!-- Focus Timer -->
+            <section class="card timer-card">
+                <h3 class="section-title">Focus</h3>
+                <div id="timer-display">25:00</div>
+                <div class="controls">
+                    <button id="start-btn" class="btn primary">Start</button>
+                    <button id="stop-btn" class="btn secondary">Stop</button>
+                    <button id="reset-btn" class="btn secondary">Reset</button>
+                </div>
+            </section>
+
+            <!-- To-Do List -->
+            <section class="card todo-card">
+                <h3 class="section-title">Tasks</h3>
+                <div class="input-group">
+                    <input type="text" id="task-input" placeholder="New task...">
+                    <button id="add-task-btn" class="btn primary">Add</button>
+                </div>
+                <ul id="task-list"></ul>
+            </section>
+
+            <!-- Quick Links -->
+            <section class="card links-card">
+                <h3 class="section-title">Directory</h3>
+                <div class="input-group">
+                    <input type="text" id="link-name" placeholder="Title">
+                    <input type="url" id="link-url" placeholder="URL">
+                    <button id="add-link-btn" class="btn primary">Save</button>
+                </div>
+                <div id="links-container"></div>
+            </section>
+        </div>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>
